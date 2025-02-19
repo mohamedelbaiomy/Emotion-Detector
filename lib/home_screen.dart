@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Row(
-              spacing: 10,
+              spacing: 15,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
