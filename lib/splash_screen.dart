@@ -29,27 +29,31 @@ class _SplashScreenState extends State<SplashScreen> {
     return const Scaffold(
       body: Center(
         child: Column(
+          spacing: 80,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Emotion Detector",
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.black,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
-              ),
+            Column(
+              spacing: 15,
+              children: [
+                Text(
+                  "Emotion Detector",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.black,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "powered by Mohamed Elbaiomy",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 20),
-            Text(
-              "powered by Mohamed Elbaiomy",
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.black,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-            SizedBox(height: 100),
             CircularProgressIndicator(
               color: Colors.white,
               backgroundColor: Colors.black,
