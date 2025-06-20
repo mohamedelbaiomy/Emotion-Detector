@@ -33,34 +33,40 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   runModel(CameraImage image) async {
-    var predections = await Tflite.runModelOnFrame(
-      bytesList: image.planes.map((plane) {
-        return plane.bytes;
-      }).toList(),
-      imageHeight: image.height,
-      imageWidth: image.width,
-      imageMean: 127.5,
-      imageStd: 127.5,
-      rotation: 90,
-      numResults: 1,
-      threshold: 0.1,
-      asynch: true,
-    );
-    for (var element in predections!) {
-      setState(() {
-        output = element['label'];
-        confidence =
-            (element['confidence'] * 100).toStringAsFixed(0).toString();
-      });
-    }
+    try {
+      var predections = await Tflite.runModelOnFrame(
+        bytesList: image.planes.map((plane) {
+          return plane.bytes;
+        }).toList(),
+        imageHeight: image.height,
+        imageWidth: image.width,
+        imageMean: 127.5,
+        imageStd: 127.5,
+        rotation: 90,
+        numResults: 1,
+        threshold: 0.1,
+        asynch: true,
+      );
+      for (var element in predections!) {
+        setState(() {
+          output = element['label'];
+          confidence =
+              (element['confidence'] * 100).toStringAsFixed(0).toString();
+        });
+      }
+    } catch (e) {}
   }
 
   loadModel() async {
     //await Tflite.close();
-    await Tflite.loadModel(
-      model: 'assets/model_unquant.tflite',
-      labels: 'assets/labels.txt',
-    );
+    try {
+      await Tflite.loadModel(
+        model: 'assets/model_unquant.tflite',
+        labels: 'assets/labels.txt',
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override

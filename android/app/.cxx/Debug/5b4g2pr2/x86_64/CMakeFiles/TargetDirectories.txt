@@ -1,0 +1,2 @@
+D:/Projects/Examples/AI - Machine Learning/emotion_detector/android/app/.cxx/Debug/5b4g2pr2/x86_64/CMakeFiles/edit_cache.dir
+D:/Projects/Examples/AI - Machine Learning/emotion_detector/android/app/.cxx/Debug/5b4g2pr2/x86_64/CMakeFiles/rebuild_cache.dir
