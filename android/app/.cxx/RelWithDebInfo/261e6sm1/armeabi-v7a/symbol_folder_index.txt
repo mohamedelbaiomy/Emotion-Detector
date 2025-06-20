@@ -1,0 +1,1 @@
+D:\Projects\Examples\AI - Machine Learning\emotion_detector\build\app\intermediates\cxx\RelWithDebInfo\261e6sm1\obj\armeabi-v7a
